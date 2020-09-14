@@ -6,6 +6,7 @@ namespace 啊哈算法学习
     {
         static void Main(string[] args)
         {
+
             Console.WriteLine("Hello World!");
         }
     }
