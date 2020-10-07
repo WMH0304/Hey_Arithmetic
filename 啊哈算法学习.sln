@@ -9,6 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "二分法", "二分法\二�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "递归", "递归\递归.csproj", "{12987C61-260A-4635-804D-6ECBC0B3E9F9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PDF", "PDF", "{16FE7CDF-CCEC-4550-9B5D-710E0B6D0F55}"
+	ProjectSection(SolutionItems) = preProject
+		D:\c#\《算法图解》.pdf = D:\c#\《算法图解》.pdf
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

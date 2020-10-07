@@ -41,6 +41,8 @@ namespace 排序
          
         }
 
+
+        #region 快速排序
         /*
          * 快速排序思想类似于二分查找，都是确定一个中位数（排序里面叫做基准数）
          * 排序步骤如下：
@@ -49,13 +51,12 @@ namespace 排序
          * 3.然后分别对两个数组进行排序
          * 4.最后合并数组
          */
-
-            /// <summary>
-            /// 分组
-            /// </summary>
-            /// <param name="a"></param>
-            /// <param name="low"></param>
-            /// <param name="high"></param>
+        /// <summary>
+        /// 分组
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="low"></param>
+        /// <param name="high"></param>
         private static void QuickSort(int[] a, int low, int high)
         {
             if (low >= high)
@@ -122,5 +123,11 @@ namespace 排序
 
 
         }
+        #endregion
+
+
+
+
+
     }
 }
