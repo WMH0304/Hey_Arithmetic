@@ -6,7 +6,9 @@ namespace pdff
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            int a = 10, b = 18;
+            Console.WriteLine(b%a);
+            Console.ReadLine();
         }
     }
 }

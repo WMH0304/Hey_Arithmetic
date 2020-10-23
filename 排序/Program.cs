@@ -15,8 +15,25 @@ namespace 排序
         static void Main(string[] args)
         {
 
-           
+            int[] vs = { 8, 3, 5, 7, 9, 2, 4, 6, 1 };
+
+
+            #region 插入排序
+
+            #endregion
+
+            #region 选择排序
+            /*
+            Selection_sort(vs);
+            foreach (var item in vs)
+            {
+                Console.Write(item+" ");
+            }
+            */
+            #endregion
+
             #region 快速排序
+            /*
             //检测时间
             System.Diagnostics.Stopwatch watch = new System.Diagnostics.Stopwatch();
             const int z = 1000000;
@@ -29,17 +46,72 @@ namespace 排序
                 a[i] = random.Next(0, z);
             }
             watch.Start();//计时器开始。
-            QuickSort(a, 0, z - 1);
+            //QuickSort(a, 0, z - 1);
             watch.Stop();//计时器结束。
            
             string time = watch.ElapsedMilliseconds.ToString();
             Console.Write("排序所用时间 :" + " " + time + " ms");
-         
-            Console.ReadKey();
+           */
             #endregion
 
-         
+
+            Console.ReadKey();
         }
+
+
+        #region 插入排序
+        /*
+         * 
+         * 
+         */
+
+        /// <summary>
+        /// 插入排序
+        /// </summary>
+        /// <param name="vs"></param>
+        private static void Insertion_sorting(int[] vs)
+        {
+
+        }
+
+        #endregion
+
+        #region 选择排序
+        /*
+         * 选择排序 ：
+         * 1.找出数组中最小的元素
+         * 2.然后将他与数组的第一个元素交换位置（如果第一个元素就是最小数就和自身交换）
+         * 3.然后再再剩下的元素中查找最小的元素和第二个元素交换位置，以此类推
+         * 
+         * 
+         */
+        /// <summary>
+        /// 选择排序
+        /// </summary>
+        /// <param name="vs"></param>
+        private static void Selection_sort(int []vs)
+        {
+            //int[] vs = { 1, 3, 5, 7, 9, 2, 4, 6, 8 };
+            for (int i = 0; i < vs.Length; i++)
+            {
+                int min ;
+               
+                for (int j = i + 1; j < vs.Length; j++)//循环剩余的数
+                {
+                    //找出最小数
+                    if (vs[j]<vs[i])
+                    {
+                        //将两个元素的位置进行交换
+                        min = vs[j];
+                        vs[j] = vs[i];
+                        vs[i] = min;
+                    }
+                }
+            }
+        }
+        #endregion
+
+
 
 
         #region 快速排序

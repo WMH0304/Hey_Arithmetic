@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace 递归
 {
+   
     /*
      * 啥是递归？
      * 1.递归指一种通过不断地调用自身从而缩减自身规模地算法（自己调用自己的函数）
@@ -54,7 +55,7 @@ namespace 递归
             Console.WriteLine("最大数"+ gibn);
 
 
-            Console.ReadKey();
+      
 
         }
       
