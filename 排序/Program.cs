@@ -146,13 +146,13 @@ namespace 排序
             Task.Run(() =>
             {
                 QuickSort(a, low, pivot - 1);
-            });
+            }).Wait();
 
             //对枢轴右端进行排序。
             Task.Factory.StartNew(() =>
             {
                 QuickSort(a, pivot + 1, high);
-            });
+            }).Wait();
             //QuickSort(a, low, pivot - 1);
             //QuickSort(a, pivot + 1, high);
         }
