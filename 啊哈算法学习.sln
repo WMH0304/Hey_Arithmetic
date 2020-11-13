@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "广度优先搜索", "广�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "狄克斯特拉算法", "狄克斯特拉算法\狄克斯特拉算法.csproj", "{5CE9014E-DFF3-4A9E-A38A-E0E65DAD55EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "贪婪算法", "贪婪算法\贪婪算法.csproj", "{E43BD748-61BE-48B3-BAF7-883C09B69AA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "贪婪算法", "贪婪算法\贪婪算法.csproj", "{E43BD748-61BE-48B3-BAF7-883C09B69AA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "动态规划", "动态规划\动态规划.csproj", "{4F0CB2DC-A5D3-4883-80BC-41EFACD8DC3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{E43BD748-61BE-48B3-BAF7-883C09B69AA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E43BD748-61BE-48B3-BAF7-883C09B69AA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E43BD748-61BE-48B3-BAF7-883C09B69AA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F0CB2DC-A5D3-4883-80BC-41EFACD8DC3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F0CB2DC-A5D3-4883-80BC-41EFACD8DC3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F0CB2DC-A5D3-4883-80BC-41EFACD8DC3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F0CB2DC-A5D3-4883-80BC-41EFACD8DC3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
