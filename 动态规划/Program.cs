@@ -40,7 +40,7 @@ namespace 动态规划
     {
         static void Main(string[] args)
         {
-            
+
 
             //买书问题
             //int[] A = {2,5,7};
@@ -61,6 +61,12 @@ namespace 动态规划
             // 最长公共字符串
             //Console.WriteLine(travel("blue", "clues"));
 
+            // 切钢条问题
+            int[] l = { 1,2,3,4,5/*,6,7,8,9,10*/};
+            int[] p = { 1,5,8,9,10/*,17,17,20,24,30*/};
+            steel_bar(l,p,5);
+
+
             Console.ReadKey();
         }
 
@@ -68,7 +74,7 @@ namespace 动态规划
         /// 钢条切割问题
         /// </summary>
         /// <returns></returns>
-        static int steel_bar()
+        static int steel_bar(int []A,int []B,int n)
         {
 
             /*
@@ -79,10 +85,47 @@ namespace 动态规划
              * 
              * 求最佳切割方案
              */
+            /*
+             * 解决思路：
+             * 确定每个状态的最优解
+             * 满足条件 可取 f[i,j] = b[i]
+             * 
+             * 小前提，在此之前有最优解
+             * 大于满足条件 在当前可取 f[i-a[j],i]+f[a[j],i]
+             * 
+             * 
+             * 
+             */
+            if (n==0)
+            {
+                return 0;
+            }
+             //n 钢条长度
+            int A_l = A.Length;//钢条长度数组
+            int B_l = B.Length;//钢条价格数组
+            //长 a[i]
+            //价 b[i]
+            int[,] f = new int[A_l+1, B_l+1];
+            //长度
+            for (int i = 1; i <=n; i++)
+            {
+                //价格
+                for (int j = 0; j <=B_l ; j++)
+                {
+                    if (i>=A[i-1]&& i>=A[j])
+                    {
+                        f[i, j] = Math.Max(B[i-1], f[i - A[j], i] + f[A[j], i]);
+                    }
+                   
+                   
+                }
+            }
+            
+            
 
 
 
-            return 0;
+            return f[B_l,n];
         }
 
 
