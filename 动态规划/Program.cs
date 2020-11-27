@@ -12,7 +12,7 @@ namespace 动态规划
      * 动态规划组成部分：
      * 1.确定状态
      * 确定最后一步（最优解地最后一步）
-     * 转化子问题（问题规模更小的问题）
+     * 转化子问题（问题规模更小的问题）c 
      * 2.转移方程
      * 列出所有可能
      * 3.确定边界和初始条件
@@ -93,7 +93,13 @@ namespace 动态规划
              * 小前提，在此之前有最优解
              * 大于满足条件 在当前可取 f[i-a[j],i]+f[a[j],i]
              * 
+             * 回溯问题 表达式
              * 
+             *  f[i,j] =f[
+             *  
+             *  
+             *  ]
+             * 确定边界和范围
              * 
              */
             if (n==0)
@@ -103,21 +109,33 @@ namespace 动态规划
              //n 钢条长度
             int A_l = A.Length;//钢条长度数组
             int B_l = B.Length;//钢条价格数组
-            //长 a[i]
-            //价 b[i]
+                               //长 a[i]
+                               //价 b[i]
+
+            int t;
             int[,] f = new int[A_l+1, B_l+1];
             //长度
             for (int i = 1; i <=n; i++)
             {
                 //价格
-                for (int j = 0; j <=B_l ; j++)
+                for (int j = 0; j <B_l ; j++)
                 {
-                    if (i>=A[i-1]&& i>=A[j])
+
+                   
+                    if (i>=A[j])
                     {
-                        f[i, j] = Math.Max(B[i-1], f[i - A[j], i] + f[A[j], i]);
+                       
+                        f[i, j] = Math.Max(f[i-1,j],
+                            Math.Max(B[j],f[i,i - A[j]] + f[i,A[j]]));
+
+                        t = f[i, i - A[j]] + f[i, A[j]];
                     }
-                   
-                   
+                    else
+                    {
+                        f[i, j] = f[i, j - 1];
+                    }
+                    
+
                 }
             }
             
@@ -125,7 +143,7 @@ namespace 动态规划
 
 
 
-            return f[B_l,n];
+            return f[n,n-1];
         }
 
 
