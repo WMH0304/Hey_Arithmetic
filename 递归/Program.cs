@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace 递归
 {
-   
+
     /*
      * 啥是递归？
      * 1.递归指一种通过不断地调用自身从而缩减自身规模地算法（自己调用自己的函数）
@@ -36,29 +36,29 @@ namespace 递归
         static void Main(string[] args)
         {
             Random random = new Random();
-            
+
             for (int i = 0; i < 5; i++)
             {
-                vs.Add(random.Next(0, 10));
+                vs.Add(random.Next(0, 100));
             }
             vs.Add(6);
             int gi = Get_int(0);//调用递归方法
-            Console.WriteLine("查找"+gi);
+            Console.WriteLine("查找" + gi);
             //递归实现阶乘1
             int gif = Get_int_factorial(5, 1);
             Console.WriteLine("阶乘" + gif);
             //递归实现遍历数组累加
-            int gia = Get_int_accumulation(0,0);
-            Console.WriteLine("累加"+gia);
+            int gia = Get_int_accumulation(0, 0);
+            Console.WriteLine("累加" + gia);
             //找出最大数
             int gibn = Get_int_big_num(0, 0);
-            Console.WriteLine("最大数"+ gibn);
+            Console.WriteLine("最大数" + gibn);
+            //求第？个数
+            Console.WriteLine("求第 7 个数是"+Get_int_what_num(7));
 
-
-      
 
         }
-      
+
         /// <summary>
         /// 递归查找
         /// </summary>
@@ -82,7 +82,7 @@ namespace 递归
             j++;
             return Get_int(j++);
         }
-       
+
         /// <summary>
         /// 递归阶乘
         /// </summary>
@@ -103,48 +103,97 @@ namespace 递归
                 return Get_int_factorial(i, j);
             }
         }
-       
+
         /// <summary>
         /// 累加
         /// </summary>
         /// <returns></returns>
-        static int Get_int_accumulation(int num,int i)
+        static int Get_int_accumulation(int num, int i)
         {
-           
+
             num = num + vs[i];
             //跳出条件
-            if (i == vs.Count-1)
+            if (i == vs.Count - 1)
             {
                 return num;
             }
             i++;
-            return Get_int_accumulation(num,i);
+            return Get_int_accumulation(num, i);
         }
-       
+
         /// <summary>
         /// 找出最大数
         /// </summary>
         /// <param name="i"></param>
         /// <param name="j"></param>
         /// <returns></returns>
-        static int Get_int_big_num(int i,int j)
+        static int Get_int_big_num(int i, int j)
         {
-           
-            if (j<vs[i])
+
+            if (j < vs[i])
             {
                 j = vs[i];
             }
 
-            if (i ==vs.Count-1)
+            if (i == vs.Count - 1)
             {
                 return j;
             }
             i++;
-            return Get_int_big_num(i,j);
+            return Get_int_big_num(i, j);
         }
 
 
+        /// <summary>
+        /// 1 1 2 3 5 8 13 21 求第？个数
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
+        static int Get_int_what_num(int num)
+        {
+            /*
+             *  1+1 2
+             *  2+1 3
+             *  
+             *  解题思路：
+             *  假设 num =7
+             *  那么存在数列
+             *  
+             *  1 1 2 3 5 8 13
+             *  
+             *  所以有 13 = 8 + 5
+             *  所以就有   后一个数是前两个数的和
+             *  
+             *   num(13) = num-1(8) + num-2(5) 
+             *  num-1(8) = num-2(5) + num-3(3)
+             *  num-2(5) = num-3(3) + num-4(2)
+             *  num-3(3) = num-4(2) + num-5(1)
+             *  num-4(2) = num-5(1) + num-6(1)
+             *  num-5(1) = num-6(1) + num-7(0)
+             *  
+             *  随后一个数是前两个数的和
+             *  
+             *  832040
+             *  832040
+             */
 
+            // num -7
+            if (num < 1)
+            {
+                return 0;
+            }
+            //前两个数都是1
+            if (0 < num && num <= 2)
+            {
+                return 1;
+            }
+            var nu = Get_int_what_num(num - 1) + Get_int_what_num(num - 2);
+            return nu;
+
+
+
+
+        }
 
 
     }
